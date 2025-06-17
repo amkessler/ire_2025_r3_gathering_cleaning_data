@@ -117,7 +117,7 @@ The CSV is up on Github.com, here: https://raw.githubusercontent.com/smussenden/
 Warning: this may not work if the wifi is buggy!
 
 ```{r}
-babynames_a_csv_web <- read_csv("https://raw.githubusercontent.com/smussenden/nicar_2024_r3_loading_cleaning_data/main/data/babynames_a.csv")
+babynames_a_csv_web <- read_csv("https://raw.githubusercontent.com/amkessler/ire_2025_r3_gathering_cleaning_data/refs/heads/main/data/babynames_a.csv")
 ```
 
 #### Loading data from an Excel file
@@ -243,17 +243,6 @@ Using what you just learned, I'd like you to take a stab at ingesting the html o
 
 ```
 
-### Your Turn Option 2
-
-538 puts a lot of neat data sets on its' GitHub organization page.  Here's the page to a dataset about the Avengers, from Marvel Comics:  
-
-https://github.com/fivethirtyeight/data/blob/master/avengers/avengers.csv
-
-Read this data into your environment and store it as an object called `avengers`. 
-
-```{r}
-
-```
 
 #### Other ways of getting data
 
@@ -391,7 +380,7 @@ We can fix that with our first of many string functions, from the `stringr` pack
 
 babynames_clean <- babynames_dirty %>%
   remove_empty() %>%
-  mutate(name_at_birth = str_trim(name_at_birth,side="both")) %>%
+  mutate(name_at_birth = str_trim(name_at_birth, side = "both")) %>%
   distinct() 
 
 ```
@@ -426,10 +415,10 @@ The next issue will be a bit more challenging, fixing Abigail.  Her name has ext
 
 babynames_clean <- babynames_dirty %>%
   remove_empty() %>%
-  mutate(name_at_birth = str_trim(name_at_birth,side="both")) %>%
+  mutate(name_at_birth = str_trim(name_at_birth, side="both")) %>%
   distinct() %>%
   mutate(name_at_birth = str_to_title(name_at_birth)) %>%
-  mutate(name_at_birth = str_remove(name_at_birth,"First Name: "))
+  mutate(name_at_birth = str_remove(name_at_birth, "First Name: "))
 
 ```
 
