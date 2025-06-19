@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2025 ire_2025_r3_gathering_cleaning_data authors
+Copyright (c) 2025 Aaron Kessler
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
