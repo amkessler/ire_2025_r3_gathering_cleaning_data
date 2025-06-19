@@ -1,5 +1,15 @@
 # IRE 2025 Conference - R3: Gathering and Cleaning Data
 
+## Loading What You'll Need
+
+**To install the packages we'll use, run this line of code in the console:**
+
+`install.packages("tidyverse", "babynames", "rvest", "janitor", "readxl", "googlesheets4", "usethis")`
+
+**Then, to load this entire repository with the class materials, run this line:**
+
+`usethis::use_course("https://github.com/amkessler/ire_2025_r3_gathering_cleaning_data/archive/refs/heads/main.zip")`
+
 ## What We're Doing
 
 In this session, we're going to show you two things:
@@ -22,11 +32,11 @@ In this session, we're going to show you two things:
 
 -   cleaning up column names
 
+-   parsing and manipulating strings
+
 -   correcting erroneous values
 
 -   converting data types
-
--   manipulating strings
 
 ## What You'll Get Out of This
 
@@ -51,11 +61,3 @@ They are:
 -   The [googlesheets4](https://googlesheets4.tidyverse.org/) package for reading -- and writing -- data stored in a Google Sheet.
 
 -   The [usethis](https://usethis.r-lib.org/) package to help with loading the class project onto your local machine
-
-#### To install them, run this line of code in the console:
-
-`install.packages("tidyverse", "babynames", "rvest", "janitor", "readxl", "googlesheets4", "usethis")`
-
-To load this repo from within RStudio with one line of code, run this line:
-
-TKTKTKTK
