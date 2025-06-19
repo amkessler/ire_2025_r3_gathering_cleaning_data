@@ -50,6 +50,12 @@ They are:
 
 -   The [googlesheets4](https://googlesheets4.tidyverse.org/) package for reading -- and writing -- data stored in a Google Sheet.
 
+-   The [usethis](https://usethis.r-lib.org/) package to help with loading the class project onto your local machine
+
 #### To install them, run this line of code in the console:
 
-`install.packages("tidyverse", "babynames", "rvest", "janitor", "readxl", "googlesheets4")`
+`install.packages("tidyverse", "babynames", "rvest", "janitor", "readxl", "googlesheets4", "usethis")`
+
+To load this repo from within RStudio with one line of code, run this line:
+
+TKTKTKTK
