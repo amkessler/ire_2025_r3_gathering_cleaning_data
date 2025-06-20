@@ -496,3 +496,43 @@ When we glimpse the data, it's been converted to the correct datatype.
 glimpse(babynames_clean)
 
 ```
+
+
+
+## Bonus: Conditionals (and more string functions)
+
+If we have time, we can delve more deeply into playing with string functions, as 
+well as introducing you to conditionals (known as "if-then" statements).  
+  
+We'll use data from this Excel file to play with...
+
+```{r}
+
+string_function_df <- read_excel("data/AdvancedExcel_StringFunctions_IfStatements.xlsx",
+                                  sheet = "StringFunctions") %>% 
+                      clean_names() %>% 
+                      select(year, player)
+
+
+basic_if_df <- read_excel("data/AdvancedExcel_StringFunctions_IfStatements.xlsx",
+                          sheet = "BasicIF") %>% 
+                clean_names() %>% 
+                select(week_num:home_score)
+
+if_with_calcs_df <- read_excel("data/AdvancedExcel_StringFunctions_IfStatements.xlsx",
+                               sheet = "IFwithCalcs", skip = 3) %>% 
+                    clean_names() %>% 
+                    select(lastname:salary)
+# Employees are getting a 1% raise, but all will get a minimum raise of $350
+
+
+```
+
+
+```{r}
+
+
+
+
+```
+
