@@ -124,13 +124,13 @@ babynames_a_excel %>%
 
 Because the "A" names sheet is the first sheet in the Excel file, the function automatically loads the "A" sheet.
 
-But if we need to get any other sheet, like the one containing the "B" names, we'll have to get it by adding another argument to the read_xlsx function.
+But if we need to get any other sheet, like the one containing the "B" names, we'll have to get it by adding another argument to the `read_xlsx` function.
 
 The sheet is called "babynames_b".
 
 How can we load Sheet B? Let's take a look at the handy help page for the readxl package.
 
--   You can either type ?read_xlsx in the console and look at what pops up on the right.
+-   You can either type `?read_xlsx` in the console and look at what pops up on the right.
 -   Or you can visit https://readxl.tidyverse.org/reference/read_excel.html.
 
 Can you see how to read in a different sheet from the first?
@@ -237,9 +237,9 @@ babynames_b_sheet <- read_sheet("1GG_RmYPGCNKbLb4x1dkQv1B9NjDBF0kQRtge9Aea4rs", 
 
 ### Your Turn Option 1
 
-Let's revisit what we just talked about regarding the .REnviron variables. Could we do the same for the Google Sheet reference string? So we didn't store it in a public repository where anyone could see where our sheet lived, but still allow for the functionality of it.
+Let's revisit what we just talked about regarding the `.Renviron` variables. Could we do the same for the Google Sheet reference string? So we didn't store it in a public repository where anyone could see where our sheet lived, but still allow for the functionality of it.
 
-Try creating a new variable in your .REnviron file with the sheet reference and using it to load babynames_b...
+Try creating a new variable in your `.Renviron` file with the sheet reference and using it to load babynames_b...
 
 ```{r}
 
@@ -283,9 +283,7 @@ rm(list=ls())
 
 ```
 
-
 <br>
-
 
 ## Data Cleaning
 

@@ -3306,11 +3306,11 @@ dbl (3): year, n, prop
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s look at how you can use RStudio&#39;s import wizard for Excel, too?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Because the “A” names sheet is the first sheet in the Excel file, the function automatically loads the “A” sheet.</p>
-<p>But if we need to get any other sheet, like the one containing the “B” names, we’ll have to get it by adding another argument to the read_xlsx function.</p>
+<p>But if we need to get any other sheet, like the one containing the “B” names, we’ll have to get it by adding another argument to the <code>read_xlsx</code> function.</p>
 <p>The sheet is called “babynames_b”.</p>
 <p>How can we load Sheet B? Let’s take a look at the handy help page for the readxl package.</p>
 <ul>
-<li>You can either type ?read_xlsx in the console and look at what pops up on the right.</li>
+<li>You can either type <code>?read_xlsx</code> in the console and look at what pops up on the right.</li>
 <li>Or you can visit https://readxl.tidyverse.org/reference/read_excel.html.</li>
 </ul>
 <p>Can you see how to read in a different sheet from the first?</p>
@@ -3428,8 +3428,8 @@ dbl (3): year, n, prop
 </section>
 <section id="your-turn-option-1" class="level3">
 <h3 class="anchored" data-anchor-id="your-turn-option-1">Your Turn Option 1</h3>
-<p>Let’s revisit what we just talked about regarding the .REnviron variables. Could we do the same for the Google Sheet reference string? So we didn’t store it in a public repository where anyone could see where our sheet lived, but still allow for the functionality of it.</p>
-<p>Try creating a new variable in your .REnviron file with the sheet reference and using it to load babynames_b…</p>
+<p>Let’s revisit what we just talked about regarding the <code>.Renviron</code> variables. Could we do the same for the Google Sheet reference string? So we didn’t store it in a public repository where anyone could see where our sheet lived, but still allow for the functionality of it.</p>
+<p>Try creating a new variable in your <code>.Renviron</code> file with the sheet reference and using it to load babynames_b…</p>
 <p>In addition to loading data from Google Sheets, you can also WRITE data from R Studio to Google Sheets. This is such a great way to share data you’ve analyzed with other, less tech-savvy members of your team. More on that here: https://googlesheets4.tidyverse.org/index.html.</p>
 </section>
 <section id="your-turn-option-2" class="level3">
