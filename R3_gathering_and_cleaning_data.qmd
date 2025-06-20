@@ -62,7 +62,7 @@ babynames_package_df %>%
 
 ```
 
-### Loading data from a local flat file
+### Loading data from a local csv file
 
 Loading data from a flat file -- like a csv -- stored on your local machine is a very common data loading task. For that, we'll use the `read_csv()` function that's part of the `readr` package that loads with the `tidyverse`.
 
@@ -83,7 +83,7 @@ babynames_a_csv %>%
 
 ```
 
-### Loading data from a flat file on the internet
+### Loading data from a csv file on the internet
 
 We can load that same csv from the internet, instead of doing it locally. We just need to change the information inside of the `read_csv()` function to pass a URL, instead of a location on our computer.
 
