@@ -1,6 +1,6 @@
 ---
-title: "Musk and the European Far Right"
-author: "AP Data & Investigative Teams"
+title: "IRE 2025 - Gathering and Cleaning Data in R"
+author: "Aaron Kessler (adapted from Sean Mussenden)"
 date: "06/20/2025"
 # date: "`r format(Sys.time(), '%B %d, %Y')`" # to have current day of rendering used
 format:
@@ -61,7 +61,7 @@ babynames_package_df %>%
 
 ```
 
-#### Loading data from a local flat file
+### Loading data from a local flat file
 
 Loading data from a flat file -- like a csv -- stored on your local machine is a very common data loading task. For that, we'll use the `read_csv()` function that's part of the `readr` package that loads with the `tidyverse`.
 
@@ -82,7 +82,7 @@ babynames_a_csv %>%
 
 ```
 
-#### Loading data from a flat file on the internet
+### Loading data from a flat file on the internet
 
 We can load that same csv from the internet, instead of doing it locally. We just need to change the information inside of the `read_csv()` function to pass a URL, instead of a location on our computer.
 
@@ -100,7 +100,7 @@ babynames_a_csv_web %>%
 
 ```
 
-#### Loading data from an Excel file
+### Loading data from an Excel file
 
 Another data format you'll likely see in the wild: Excel files. They're a little trickier than csvs, because they can contain multiple sheets.
 
@@ -142,7 +142,7 @@ babynames_b_excel <- read_xlsx("data/babynames_excel.xlsx")
 
 ```
 
-#### Loading data from an HTML table
+### Loading data from an HTML table
 
 On this page is an HTML table showing the top 2022 baby names. https://www.ssa.gov/oact/babynames/. Because the wifi is often buggy, I've saved an HTML file locally of this page, which we'll work with instead. It's in the data folder.
 
@@ -187,7 +187,7 @@ top_2022_baby_names
 
 Never web scraped before? Now you have! A warning that web scraping does get more challenging from here.
 
-#### Loading data from google sheets
+### Loading data from google sheets
 
 We can also load data directly from Google Sheets, using the `read_sheet()` function from the `googlesheets4` package. Google Sheets, like Excel files, can also have multiple workbooks.
 
@@ -240,7 +240,7 @@ Using what you just learned, I'd like you to take a stab at ingesting the html o
 
 ```
 
-#### Other ways of getting data
+### Other ways of getting data
 
 There are lots of other ways to bring data into R. We don't have to delve into all of them today, but you should be aware of them for continued learning.
 
@@ -250,7 +250,7 @@ There are lots of other ways to bring data into R. We don't have to delve into a
 
 -   Get data from packages the R community has built to load and work with specific kinds of data, including some nice helper functions. If the dataset you want to use is popular, there's a great change someone has built an R package for it! Some great examples: [*Tidycensus*](https://walkerke.github.io/tidycensus/index.html)*: for loading and working with all manner of U.S. Census Data.* [RTweet](https://rtweet.info/): for working with Twitter data
 
-#### Clear enivronment
+### Clear enivronment
 
 Before moving on to the data cleaning section, let's clean up all those dataframes in our environment with this handy bit of code. You'll rarely do this in practice in your reproducible code, but for now it helps remove some of the clutter for our demonstration.
 
@@ -258,7 +258,7 @@ Before moving on to the data cleaning section, let's clean up all those datafram
 rm(list=ls())
 ```
 
-# Data Cleaning
+## Data Cleaning
 
 Data cleaning is a critical step in preparing data for analysis. Everyone wants to jump right to the fun stuff -- me too! -- but failing to account for flaws in the data can lead to errors, which can lead to corrections.
 
@@ -272,7 +272,7 @@ babynames_dirty <- read_rds("data/babynames_dirty.rds")
 
 ```
 
-#### Identify Issues
+### Identify Issues
 
 Examine the data in the environment window.
 
@@ -294,7 +294,7 @@ Let's examine each of these, while fixing them.
 
 Our goal will be one nice long chained function to fix all the problems, so we have a clear record of what we've done.
 
-#### Remove empty rows and columns
+### Remove empty rows and columns
 
 First, let's get rid of that totally NA row and column. The `janitor` package has a nice function for getting rid of empty rows and columns
 
@@ -307,7 +307,7 @@ babynames_clean <- babynames_dirty %>%
 # both rows and columns? remove_empty()
 ```
 
-#### Remove duplicates
+### Remove duplicates
 
 Right now, we have two identical rows with values for "Amelia" and "Emma". We can remove those by using the `distinct()` function, which looks for duplicate values and keeps only one.
 
@@ -340,7 +340,7 @@ babynames_clean <- babynames_dirty %>%
 
 Now when we run it again, `distinct()` gets rid of the extra Emma row because the difference has been fixed.
 
-#### Clean up names column
+### Clean up names column
 
 There are still lots of issues with the "name_at_birth" column.
 
@@ -359,7 +359,7 @@ babynames_clean <- babynames_clean %>%
 head(babynames_clean)
 ```
 
-### Before we move on from names column
+#### Before we move on from names column
 
 Before we move on, let's suppose we wanted to make all the names lowercase or uppercase instead. What do we think a function to do that might be called? If you start typing str_to in the console, you might get a clue.
 
@@ -376,7 +376,7 @@ head(babynames_clean)
 
 ```
 
-#### Standardize "Sex" Column
+### Standardize "Sex" Column
 
 We can use one another string function, `str_sub()` to standardize the "sex" column. This function in the block below says, "Starting at the left side of the sex column, keep everything from the first character on the left to...the first character on the left and Get rid of everything else."  
 Let's explore string functions!
@@ -388,7 +388,7 @@ babynames_clean %>%
 
 ```
 
-### Before we move on from sex
+#### Before we move on from sex
 
 What happens if you change the start and end numbers? How does the output change? Try it now.
 
@@ -409,7 +409,7 @@ babynames_clean <- babynames_clean %>%
 
 ```
 
-#### Fix 2015 column
+### Fix 2015 column
 
 The 2015 column is different from the other columns, with an underscore at the end. If we want to do math to that column, we'll have to fix it. Here, again, we can use `str_remove()`.
 Uncomment this out and then try to run it...
