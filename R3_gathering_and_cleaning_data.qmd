@@ -188,7 +188,7 @@ top_2022_baby_names
 
 Never web scraped before? Now you have! A warning that web scraping does get more challenging from here.
 
-### Loading data from google sheets
+### Loading data from Google Sheets
 
 We can also load data directly from Google Sheets, using the `read_sheet()` function from the `googlesheets4` package. Google Sheets, like Excel files, can also have multiple workbooks.
 
@@ -198,15 +198,24 @@ To read in the sheet, we need to paste in the sheet ID, which is the long sting 
 
 Because the "A" sheet comes first, it automatically loads that sheet.
 
-Before we get there, though, we'll need to authenticate with Google. Look down in the console, select an account or hit 1 to start the process of in-browser authentication.
+Before we get there, though, we'll need to perform an *authentication* with Google. Look down in the console, select an account or hit 1 to start the process of in-browser authentication.
 
 ```{r}
 
 gs4_auth()
 
-# if you've already authenticated once and want to tell R to use your saved choice
+# If you've already authenticated once and want to tell R to use your saved choice
 # without being prompted to enter its number on the list each time, you can do:
 # gs4_auth("youremailaddress@gmail.com")
+
+# Let's talk about the even better way to do this - storing your email value in .Renviron
+
+# What is .REnviron??
+# Run this line in the console:
+# usethis::edit_r_environ()
+
+# Now set the value to pull your locally stored value:
+# gs4_auth(Sys.getenv("GMAIL_ADDRESS"))
 
 ```
 
@@ -256,8 +265,13 @@ There are lots of other ways to bring data into R. We don't have to delve into a
 Before moving on to the data cleaning section, let's clean up all those dataframes in our environment with this handy bit of code. You'll rarely do this in practice in your reproducible code, but for now it helps remove some of the clutter for our demonstration.
 
 ```{r}
+
 rm(list=ls())
+
 ```
+
+
+
 
 ## Data Cleaning
 
