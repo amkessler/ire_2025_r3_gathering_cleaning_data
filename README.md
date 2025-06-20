@@ -6,7 +6,7 @@
 
 `install.packages("tidyverse", "babynames", "rvest", "janitor", "readxl", "googlesheets4", "usethis")`
 
-**Then, to load this entire repository with the class materials, run this line:**
+**Then to load this project repo with the class materials, run this line:**
 
 `usethis::use_course("https://github.com/amkessler/ire_2025_r3_gathering_cleaning_data/archive/refs/heads/main.zip")`
 
