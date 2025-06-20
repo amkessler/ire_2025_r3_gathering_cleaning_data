@@ -3097,12 +3097,13 @@ vertical-align: -.125em;
   <li><a href="#lets-go" id="toc-lets-go" class="nav-link" data-scroll-target="#lets-go">Let’s go</a>
   <ul class="collapse">
   <li><a href="#loading-preloaded-data-from-a-package" id="toc-loading-preloaded-data-from-a-package" class="nav-link" data-scroll-target="#loading-preloaded-data-from-a-package">Loading preloaded data from a package</a></li>
-  <li><a href="#loading-data-from-a-local-flat-file" id="toc-loading-data-from-a-local-flat-file" class="nav-link" data-scroll-target="#loading-data-from-a-local-flat-file">Loading data from a local flat file</a></li>
-  <li><a href="#loading-data-from-a-flat-file-on-the-internet" id="toc-loading-data-from-a-flat-file-on-the-internet" class="nav-link" data-scroll-target="#loading-data-from-a-flat-file-on-the-internet">Loading data from a flat file on the internet</a></li>
+  <li><a href="#loading-data-from-a-local-csv-file" id="toc-loading-data-from-a-local-csv-file" class="nav-link" data-scroll-target="#loading-data-from-a-local-csv-file">Loading data from a local csv file</a></li>
+  <li><a href="#loading-data-from-a-csv-file-on-the-internet" id="toc-loading-data-from-a-csv-file-on-the-internet" class="nav-link" data-scroll-target="#loading-data-from-a-csv-file-on-the-internet">Loading data from a csv file on the internet</a></li>
   <li><a href="#loading-data-from-an-excel-file" id="toc-loading-data-from-an-excel-file" class="nav-link" data-scroll-target="#loading-data-from-an-excel-file">Loading data from an Excel file</a></li>
   <li><a href="#loading-data-from-an-html-table" id="toc-loading-data-from-an-html-table" class="nav-link" data-scroll-target="#loading-data-from-an-html-table">Loading data from an HTML table</a></li>
-  <li><a href="#loading-data-from-google-sheets" id="toc-loading-data-from-google-sheets" class="nav-link" data-scroll-target="#loading-data-from-google-sheets">Loading data from google sheets</a></li>
+  <li><a href="#loading-data-from-google-sheets" id="toc-loading-data-from-google-sheets" class="nav-link" data-scroll-target="#loading-data-from-google-sheets">Loading data from Google Sheets</a></li>
   <li><a href="#your-turn-option-1" id="toc-your-turn-option-1" class="nav-link" data-scroll-target="#your-turn-option-1">Your Turn Option 1</a></li>
+  <li><a href="#your-turn-option-2" id="toc-your-turn-option-2" class="nav-link" data-scroll-target="#your-turn-option-2">Your Turn Option 2</a></li>
   <li><a href="#other-ways-of-getting-data" id="toc-other-ways-of-getting-data" class="nav-link" data-scroll-target="#other-ways-of-getting-data">Other ways of getting data</a></li>
   <li><a href="#clear-enivronment" id="toc-clear-enivronment" class="nav-link" data-scroll-target="#clear-enivronment">Clear enivronment</a></li>
   </ul></li>
@@ -3200,8 +3201,8 @@ vertical-align: -.125em;
 </div>
 </div>
 </section>
-<section id="loading-data-from-a-local-flat-file" class="level3">
-<h3 class="anchored" data-anchor-id="loading-data-from-a-local-flat-file">Loading data from a local flat file</h3>
+<section id="loading-data-from-a-local-csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="loading-data-from-a-local-csv-file">Loading data from a local csv file</h3>
 <p>Loading data from a flat file – like a csv – stored on your local machine is a very common data loading task. For that, we’ll use the <code>read_csv()</code> function that’s part of the <code>readr</code> package that loads with the <code>tidyverse</code>.</p>
 <p>We’re going to read in a sample of the babynames data that contains all of the names that start with “A”.</p>
 <p>Store it as an object called “babynames_a_csv” (the name doesn’t matter, can be anything). The information inside of <code>read_csv()</code> is the filepath to the data, which is stored in the data folder.</p>
@@ -3239,8 +3240,8 @@ dbl (3): year, n, prop
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with files like this?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="loading-data-from-a-flat-file-on-the-internet" class="level3">
-<h3 class="anchored" data-anchor-id="loading-data-from-a-flat-file-on-the-internet">Loading data from a flat file on the internet</h3>
+<section id="loading-data-from-a-csv-file-on-the-internet" class="level3">
+<h3 class="anchored" data-anchor-id="loading-data-from-a-csv-file-on-the-internet">Loading data from a csv file on the internet</h3>
 <p>We can load that same csv from the internet, instead of doing it locally. We just need to change the information inside of the <code>read_csv()</code> function to pass a URL, instead of a location on our computer.</p>
 <p>The CSV is up on Github.com, here: https://raw.githubusercontent.com/smussenden/nicar_2024_r3_loading_cleaning_data/main/data/babynames_a.csv</p>
 <p>Warning: this may not work if the wifi is buggy!</p>
@@ -3366,12 +3367,12 @@ dbl (3): year, n, prop
 <p>Never web scraped before? Now you have! A warning that web scraping does get more challenging from here.</p>
 </section>
 <section id="loading-data-from-google-sheets" class="level3">
-<h3 class="anchored" data-anchor-id="loading-data-from-google-sheets">Loading data from google sheets</h3>
+<h3 class="anchored" data-anchor-id="loading-data-from-google-sheets">Loading data from Google Sheets</h3>
 <p>We can also load data directly from Google Sheets, using the <code>read_sheet()</code> function from the <code>googlesheets4</code> package. Google Sheets, like Excel files, can also have multiple workbooks.</p>
 <p>I’ve loaded up a Google Sheet workbook here with two sheets, one for “A” babynames and one for “B” babynames: https://docs.google.com/spreadsheets/d/1GG_RmYPGCNKbLb4x1dkQv1B9NjDBF0kQRtge9Aea4rs. These samples only have 1,000 records in them.</p>
 <p>To read in the sheet, we need to paste in the sheet ID, which is the long sting of numbers and letters at the end of the URL: “1GG_RmYPGCNKbLb4x1dkQv1B9NjDBF0kQRtge9Aea4rs”</p>
 <p>Because the “A” sheet comes first, it automatically loads that sheet.</p>
-<p>Before we get there, though, we’ll need to authenticate with Google. Look down in the console, select an account or hit 1 to start the process of in-browser authentication.</p>
+<p>Before we get there, though, we’ll need to perform an <em>authentication</em> with Google. Look down in the console, select an account or hit 1 to start the process of in-browser authentication.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gs4_auth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -3391,9 +3392,18 @@ dbl (3): year, n, prop
 <pre><code>ℹ The googlesheets4 package is using a cached token for
   &#39;kessler.aaron@gmail.com&#39;.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if you&#39;ve already authenticated once and want to tell R to use your saved choice</span></span>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If you&#39;ve already authenticated once and want to tell R to use your saved choice</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># without being prompted to enter its number on the list each time, you can do:</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># gs4_auth(&quot;youremailaddress@gmail.com&quot;)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># gs4_auth(&quot;youremailaddress@gmail.com&quot;)</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Let&#39;s talk about the even better way to do this - storing your email value in .Renviron</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># What is .REnviron??</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Run this line in the console:</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># usethis::edit_r_environ()</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Now set the value to pull your locally stored value:</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co"># gs4_auth(Sys.getenv(&quot;GMAIL_ADDRESS&quot;))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can read in the sheet.</p>
 <div class="cell">
@@ -3415,10 +3425,15 @@ dbl (3): year, n, prop
 <pre><code>✔ Range &#39;&#39;babynames_b&#39;&#39;.</code></pre>
 </div>
 </div>
-<p>In addition to loading data from Google Sheets, you can also WRITE data from R Studio to Google Sheets. This is such a great way to share data you’ve analyzed with other, less tech-savvy members of your team. More on that here: https://googlesheets4.tidyverse.org/index.html.</p>
 </section>
 <section id="your-turn-option-1" class="level3">
 <h3 class="anchored" data-anchor-id="your-turn-option-1">Your Turn Option 1</h3>
+<p>Let’s revisit what we just talked about regarding the .REnviron variables. Could we do the same for the Google Sheet reference string? So we didn’t store it in a public repository where anyone could see where our sheet lived, but still allow for the functionality of it.</p>
+<p>Try creating a new variable in your .REnviron file with the sheet reference and using it to load babynames_b…</p>
+<p>In addition to loading data from Google Sheets, you can also WRITE data from R Studio to Google Sheets. This is such a great way to share data you’ve analyzed with other, less tech-savvy members of your team. More on that here: https://googlesheets4.tidyverse.org/index.html.</p>
+</section>
+<section id="your-turn-option-2" class="level3">
+<h3 class="anchored" data-anchor-id="your-turn-option-2">Your Turn Option 2</h3>
 <p>This page https://www.ssa.gov/oact/babynames/state/top5_2021.html, which I’ve also stored locally, contains tables of the top 5 birth names for 2021 by state, one for male and one for female.</p>
 <p>Using what you just learned, I’d like you to take a stab at ingesting the html of this page, and saving each of the tables as a separate data frame.</p>
 <div class="cell">
@@ -3441,6 +3456,7 @@ dbl (3): year, n, prop
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
 </section>
 </section>
 <section id="data-cleaning" class="level2">

@@ -235,9 +235,22 @@ babynames_b_sheet <- read_sheet("1GG_RmYPGCNKbLb4x1dkQv1B9NjDBF0kQRtge9Aea4rs", 
 
 ```
 
+### Your Turn Option 1
+
+Let's revisit what we just talked about regarding the .REnviron variables. Could we do the same for the Google Sheet reference string? So we didn't store it in a public repository where anyone could see where our sheet lived, but still allow for the functionality of it.
+
+Try creating a new variable in your .REnviron file with the sheet reference and using it to load babynames_b...
+
+```{r}
+
+
+
+
+```
+
 In addition to loading data from Google Sheets, you can also WRITE data from R Studio to Google Sheets. This is such a great way to share data you've analyzed with other, less tech-savvy members of your team. More on that here: https://googlesheets4.tidyverse.org/index.html.
 
-### Your Turn Option 1
+### Your Turn Option 2
 
 This page https://www.ssa.gov/oact/babynames/state/top5_2021.html, which I've also stored locally, contains tables of the top 5 birth names for 2021 by state, one for male and one for female.
 
@@ -271,6 +284,7 @@ rm(list=ls())
 ```
 
 
+<br>
 
 
 ## Data Cleaning
@@ -393,7 +407,7 @@ head(babynames_clean)
 
 ### Standardize "Sex" Column
 
-We can use one another string function, `str_sub()` to standardize the "sex" column. This function in the block below says, "Starting at the left side of the sex column, keep everything from the first character on the left to...the first character on the left and Get rid of everything else."  
+We can use one another string function, `str_sub()` to standardize the "sex" column. This function in the block below says, "Starting at the left side of the sex column, keep everything from the first character on the left to...the first character on the left and Get rid of everything else."\
 Let's explore string functions!
 
 ```{r}
@@ -426,8 +440,7 @@ babynames_clean <- babynames_clean %>%
 
 ### Fix 2015 column
 
-The 2015 column is different from the other columns, with an underscore at the end. If we want to do math to that column, we'll have to fix it. Here, again, we can use `str_remove()`.
-Uncomment this out and then try to run it...
+The 2015 column is different from the other columns, with an underscore at the end. If we want to do math to that column, we'll have to fix it. Here, again, we can use `str_remove()`. Uncomment this out and then try to run it...
 
 ```{r}
 # babynames_clean <- babynames_clean %>%
@@ -449,9 +462,8 @@ head(babynames_clean)
 
 ```
 
-This is one of my favorite functions to use on almost any dataset I get.  
-For columns that contain only numbers, it puts an x at the start of the name, 
-so now we can get to cleaning 2015.
+This is one of my favorite functions to use on almost any dataset I get.\
+For columns that contain only numbers, it puts an x at the start of the name, so now we can get to cleaning 2015.
 
 ```{r}
 babynames_clean <- babynames_clean %>%
