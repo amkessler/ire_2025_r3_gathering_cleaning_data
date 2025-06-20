@@ -10,6 +10,8 @@
 
 `usethis::use_course("https://github.com/amkessler/ire_2025_r3_gathering_cleaning_data/archive/refs/heads/main.zip")`
 
+*For reference afterwards, a rendered webpage of the materials is available [here](https://amkessler.github.io/ire_2025_r3_gathering_cleaning_data/).*
+
 ## What We're Doing
 
 In this session, we're going to show you two things:
